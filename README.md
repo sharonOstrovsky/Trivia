@@ -1,7 +1,7 @@
 # **Trivia** :medal_sports:
 
 
-![](src/main/resources/logo.png)
+![](src/main/resources/img/logo.png)
 
 
 ## Descripción
