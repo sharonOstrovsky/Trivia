@@ -26,7 +26,7 @@ conocimiento general, geografía, entretenimiento y matemática.
 * Postman
 * React
 * Figma
-
+* Swagger
 
 ## Figma
 
@@ -56,15 +56,18 @@ git clone https://github.com/sharonOstrovsky/Trivia.git
 ```
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/trivia
-spring.datasource.username=nombreDeUsuario
+spring.datasource.username=nombreUsuario
 spring.datasource.password=clave
 spring.jpa.hibernate.ddl-auto=create
+
+springdoc.swagger-ui.path=/swagger-ui.html
+
 ```
 
 </li>
 
 <li>
-importar a la base de datos el archivo 
+Importar a la base de datos el archivo 
 
  >trivia.sql
 
