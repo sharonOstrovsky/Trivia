@@ -27,7 +27,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public int obtenerNivelPorEdad(Usuario usuario) {
 
-        if(usuario.getEdad() < 14){
+        if(usuario.getEdad() < 14 && usuario.getEdad() > 0){
             return 1;
         }else if (usuario.getEdad() >= 14 && usuario.getEdad() < 17 ) {
             return 2;

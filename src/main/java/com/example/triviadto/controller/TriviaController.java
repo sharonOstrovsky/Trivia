@@ -1,6 +1,7 @@
 package com.example.triviadto.controller;
 
 import com.example.triviadto.dto.requestDto.UsuarioRequestDto;
+import com.example.triviadto.dto.responseDto.PreguntaResponseDto;
 import com.example.triviadto.dto.responseDto.UsuarioResponseDto;
 import com.example.triviadto.entity.Pregunta;
 import com.example.triviadto.entity.Usuario;
@@ -69,7 +70,7 @@ public class TriviaController {
      */
     @GetMapping("/preguntas")
     @Operation(description = "Enviar las preguntas del juego")
-    public ArrayList<Pregunta> enviarPreguntas(Model modelo){
+    public ArrayList<PreguntaResponseDto> enviarPreguntas(Model modelo){
         return juegoService.listarPreguntas();
     }
 }

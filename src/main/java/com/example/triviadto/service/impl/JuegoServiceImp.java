@@ -1,7 +1,9 @@
 package com.example.triviadto.service.impl;
 
 
+import com.example.triviadto.dto.Mapper.ModelMapperInterface;
 import com.example.triviadto.dto.requestDto.UsuarioRequestDto;
+import com.example.triviadto.dto.responseDto.PreguntaResponseDto;
 import com.example.triviadto.entity.Juego;
 import com.example.triviadto.entity.Pregunta;
 import com.example.triviadto.entity.Usuario;
@@ -9,6 +11,7 @@ import com.example.triviadto.service.service.JuegoService;
 import com.example.triviadto.service.service.PreguntaService;
 import com.example.triviadto.service.service.UsuarioService;
 import com.example.triviadto.utility.Categoria;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,6 +26,9 @@ public class JuegoServiceImp implements JuegoService {
     PreguntaService preguntaService;
 
     UsuarioService usuarioService;
+
+    @Autowired
+    private ModelMapperInterface modelMapperInterface;
 
     public JuegoServiceImp(PreguntaService preguntaService, UsuarioService usuarioService) {
         this.preguntaService = preguntaService;
@@ -62,21 +68,23 @@ public class JuegoServiceImp implements JuegoService {
     }
 
 
-    @Override
-    public ArrayList<Pregunta> listarPreguntas(){
+
+    public ArrayList<PreguntaResponseDto> listarPreguntas(){
 
 
         settearPreguntas();
 
-        ArrayList<Pregunta> preguntas = new ArrayList<>();
+        ArrayList<PreguntaResponseDto> preguntas = new ArrayList<>();
 
         for(int i = 0; i < 5; i++){
             Pregunta pregunta = obtenerPreguntaAzar();
-            preguntas.add(pregunta);
+
+            preguntas.add(modelMapperInterface.preguntaAPreguntaResDto(pregunta));
 
             eliminarPregunta(pregunta);
 
         }
+
         return preguntas;
     }
 
