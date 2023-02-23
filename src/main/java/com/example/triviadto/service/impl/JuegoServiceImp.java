@@ -23,7 +23,9 @@ public class JuegoServiceImp implements JuegoService {
     Juego juego = new Juego();
 
 
+
     PreguntaService preguntaService;
+
 
     UsuarioService usuarioService;
 

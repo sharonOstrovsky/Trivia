@@ -24,17 +24,24 @@ public class UsuarioServiceImpl implements UsuarioService {
     private ModelMapperInterface modelMapperInterface;
 
 
+    //pasarlo a switch
     @Override
     public int obtenerNivelPorEdad(Usuario usuario) {
 
-        if(usuario.getEdad() < 14 && usuario.getEdad() > 0){
-            return 1;
-        }else if (usuario.getEdad() >= 14 && usuario.getEdad() < 17 ) {
-            return 2;
-        } else if (usuario.getEdad() >= 17 ) {
-            return 3;
+        int edad = usuario.getEdad();
+
+        switch (edad){
+            case 1,2,3,4,5,6,7,8,9,10,11,12,13:
+                return 1;
+            case 14,15,16:
+                return 2;
+            case 0:
+                return 0;
+            default:
+                return 3;
         }
-        return 0;
+
+        
     }
 
     @Override

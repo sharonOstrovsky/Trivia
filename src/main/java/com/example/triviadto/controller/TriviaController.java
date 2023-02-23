@@ -41,6 +41,7 @@ public class TriviaController {
 
     /**
      * Buscar un usuario por su id
+     * http://localhost:8080/api/juego/usuarios/1
      * @param id
      * @return Usuario
      */
@@ -53,6 +54,7 @@ public class TriviaController {
 
     /**
      * Recibo un usuario y lo guardo en la base de datos
+     * http://localhost:8080/api/juego/registro
      * @param usuarioRequestDto
      * @return Usuario
      */
@@ -65,6 +67,7 @@ public class TriviaController {
 
     /**
      * Envia las cinco preguntas del juego
+     * http://localhost:8080/api/juego/preguntas
      * @param modelo
      * @return ArrayList<Pregunta>
      */
