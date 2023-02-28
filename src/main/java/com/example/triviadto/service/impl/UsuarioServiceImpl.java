@@ -41,8 +41,26 @@ public class UsuarioServiceImpl implements UsuarioService {
                 return 3;
         }
 
-        
+
     }
+
+    /*
+    @Override
+        public int obtenerNivelPorEdad(Usuario usuario) {
+        int edad = usuario.getEdad();
+
+        switch((edad<1) ? 0 : (edad>0 && edad<14) ? 1 : (edad>13 && edad<17) ? 2 : 3){
+            case 0:
+                return 0;
+            case 1 :
+                return 1;
+            case 2:
+                return 2;
+            default:
+                return 3;
+            }
+        }
+     */
 
     @Override
     public ResponseEntity<UsuarioResponseDto> verUsuario(Long id) {
