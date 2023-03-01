@@ -23,7 +23,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Autowired
     private ModelMapperInterface modelMapperInterface;
 
-
+/*
     //pasarlo a switch
     @Override
     public int obtenerNivelPorEdad(Usuario usuario) {
@@ -43,8 +43,8 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 
     }
+*/
 
-    /*
     @Override
         public int obtenerNivelPorEdad(Usuario usuario) {
         int edad = usuario.getEdad();
@@ -60,7 +60,7 @@ public class UsuarioServiceImpl implements UsuarioService {
                 return 3;
             }
         }
-     */
+
 
     @Override
     public ResponseEntity<UsuarioResponseDto> verUsuario(Long id) {

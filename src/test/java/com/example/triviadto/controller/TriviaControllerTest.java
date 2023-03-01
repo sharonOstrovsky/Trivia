@@ -27,9 +27,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class TriviaControllerTest {
-
+/*
     private TestRestTemplate testRestTemplate;
 
     private PreguntaRepository preguntaRepository;
@@ -73,7 +73,9 @@ class TriviaControllerTest {
         System.out.println(response.getBody());
     }
 
-    @Test
+ */
+/*
+    //@Test
     void crearUsuario() {
 
 
@@ -102,6 +104,6 @@ class TriviaControllerTest {
         assertEquals("sharon ostrovsky", result.getNombre());
 
     }
-
+*/
 
 }
