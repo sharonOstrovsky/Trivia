@@ -103,22 +103,5 @@ class TriviaControllerTest {
 
     }
 
-   // @Test
-    void enviarPreguntas() {
 
-        crearUsuario();
-
-        UsuarioService usuarioService = new UsuarioServiceImpl();
-        PreguntaService preguntaService = new PreguntaServiceImp(preguntaRepository);
-        JuegoService juegoService = new JuegoServiceImp(preguntaService, usuarioService);
-        juegoService.settearPreguntas();
-        ArrayList<PreguntaResponseDto> preguntas = juegoService.listarPreguntas();
-
-        ResponseEntity<Pregunta> response = testRestTemplate.getForEntity("/api/juego/preguntas", Pregunta.class);
-        assertEquals(response, preguntas);
-        Assertions.assertNotNull(response);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        System.out.println(response.getBody());
-
-    }
 }
