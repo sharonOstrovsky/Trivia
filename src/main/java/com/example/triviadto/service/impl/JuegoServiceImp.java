@@ -29,12 +29,13 @@ public class JuegoServiceImp implements JuegoService {
 
     UsuarioService usuarioService;
 
-    @Autowired
+   // @Autowired
     private ModelMapperInterface modelMapperInterface;
 
-    public JuegoServiceImp(PreguntaService preguntaService, UsuarioService usuarioService) {
+    public JuegoServiceImp(PreguntaService preguntaService, UsuarioService usuarioService,ModelMapperInterface modelMapperInterface) {
         this.preguntaService = preguntaService;
         this.usuarioService = usuarioService;
+        this.modelMapperInterface = modelMapperInterface;
     }
 
     @Override

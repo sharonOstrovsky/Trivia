@@ -18,12 +18,35 @@ import java.util.List;
 public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired
-    UsuarioRepository usuarioRepository;
+    private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    public void setUsuarioRepository(UsuarioRepository usuarioRepository){
+        this.usuarioRepository = usuarioRepository;
+    }
+
+    public UsuarioRepository getUsuarioRepository(){
+        return this.usuarioRepository;
+    }
 
     @Autowired
     private ModelMapperInterface modelMapperInterface;
 
+    @Autowired
+    public void setModelMapperInterface(ModelMapperInterface modelMapperInterface){
+        this.modelMapperInterface = modelMapperInterface;
+    }
+
+    public ModelMapperInterface getModelMapperInterface(){
+        return this.modelMapperInterface;
+    }
 /*
+    public UsuarioServiceImpl(UsuarioRepository usuarioRepository, ModelMapperInterface modelMapperInterface) {
+        this.usuarioRepository = usuarioRepository;
+        this.modelMapperInterface = modelMapperInterface;
+    }
+*/
+    /*
     //pasarlo a switch
     @Override
     public int obtenerNivelPorEdad(Usuario usuario) {
