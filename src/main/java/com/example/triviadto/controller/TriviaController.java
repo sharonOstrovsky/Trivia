@@ -21,11 +21,28 @@ import java.util.List;
 public class TriviaController {
 
     @Autowired
-    UsuarioService usuarioService;
+    private UsuarioService usuarioService;
+
+    @Autowired
+    public void setUsuarioService(UsuarioService usuarioService){
+        this.usuarioService = usuarioService;
+    }
+    public UsuarioService getUsuarioService(){
+        return this.usuarioService;
+    }
+
+
 
     @Autowired
     private JuegoService juegoService;
 
+    @Autowired
+    public void setJuegoService(JuegoService juegoService){
+        this.juegoService = juegoService;
+    }
+    public JuegoService getJuegoService(){
+        return this.juegoService;
+    }
 
     /**
      * Devuelve todos los usuarios de la base de datos
