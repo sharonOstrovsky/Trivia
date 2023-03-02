@@ -7,6 +7,7 @@ import com.example.triviadto.dto.responseDto.UsuarioResponseDto;
 import com.example.triviadto.entity.Usuario;
 import com.example.triviadto.repository.UsuarioRepository;
 import com.example.triviadto.service.service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -16,9 +17,9 @@ import java.util.List;
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
 
-    //@Autowired
+    @Autowired
     private UsuarioRepository usuarioRepository;
-/*
+
     @Autowired
     public void setUsuarioRepository(UsuarioRepository usuarioRepository){
         this.usuarioRepository = usuarioRepository;
@@ -27,11 +28,11 @@ public class UsuarioServiceImpl implements UsuarioService {
     public UsuarioRepository getUsuarioRepository(){
         return this.usuarioRepository;
     }
-*/
-   // @Autowired
+
+    @Autowired
     private ModelMapperInterface modelMapperInterface;
 
-  /*  @Autowired
+    @Autowired
     public void setModelMapperInterface(ModelMapperInterface modelMapperInterface){
         this.modelMapperInterface = modelMapperInterface;
     }
@@ -39,12 +40,12 @@ public class UsuarioServiceImpl implements UsuarioService {
     public ModelMapperInterface getModelMapperInterface(){
         return this.modelMapperInterface;
     }
-*/
+/*
     public UsuarioServiceImpl(UsuarioRepository usuarioRepository, ModelMapperInterface modelMapperInterface) {
         this.usuarioRepository = usuarioRepository;
         this.modelMapperInterface = modelMapperInterface;
     }
-
+*/
     /*
     //pasarlo a switch
     @Override

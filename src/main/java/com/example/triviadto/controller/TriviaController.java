@@ -8,8 +8,9 @@ import com.example.triviadto.entity.Usuario;
 import com.example.triviadto.service.service.JuegoService;
 import com.example.triviadto.service.service.UsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
-
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -19,11 +20,10 @@ import java.util.List;
 @RequestMapping("api/juego")
 public class TriviaController {
 
-
-    //@Autowired
+    @Autowired
     private UsuarioService usuarioService;
-/*
-    //@Autowired
+
+    @Autowired
     public void setUsuarioService(UsuarioService usuarioService){
         this.usuarioService = usuarioService;
     }
@@ -31,23 +31,17 @@ public class TriviaController {
         return this.usuarioService;
     }
 
-*/
 
-    //@Autowired
+
+    @Autowired
     private JuegoService juegoService;
-/*
-    //@Autowired
+
+    @Autowired
     public void setJuegoService(JuegoService juegoService){
         this.juegoService = juegoService;
     }
     public JuegoService getJuegoService(){
         return this.juegoService;
-    }
-*/
-
-    public TriviaController(UsuarioService usuarioService, JuegoService juegoService) {
-        this.usuarioService = usuarioService;
-        this.juegoService = juegoService;
     }
 
     /**
@@ -68,13 +62,12 @@ public class TriviaController {
      * @param id
      * @return Usuario
      */
-    /*
     @GetMapping("/usuarios/{id}")
     @Operation(description = "Buscar un usuario por su id")
     public ResponseEntity<UsuarioResponseDto> verUsuario(@PathVariable("id") Long id){
         return usuarioService.verUsuario(id);
     }
-*/
+
 
     /**
      * Recibo un usuario y lo guardo en la base de datos
@@ -92,11 +85,12 @@ public class TriviaController {
     /**
      * Envia las cinco preguntas del juego
      * http://localhost:8080/api/juego/preguntas
+     * @param modelo
      * @return ArrayList<Pregunta>
      */
     @GetMapping("/preguntas")
     @Operation(description = "Enviar las preguntas del juego")
-    public ArrayList<PreguntaResponseDto> enviarPreguntas(){
+    public ArrayList<PreguntaResponseDto> enviarPreguntas(Model modelo){
         return juegoService.listarPreguntas();
     }
 }
