@@ -8,7 +8,6 @@ import com.example.triviadto.entity.Usuario;
 import com.example.triviadto.service.service.JuegoService;
 import com.example.triviadto.service.service.UsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -20,10 +19,11 @@ import java.util.List;
 @RequestMapping("api/juego")
 public class TriviaController {
 
-    @Autowired
-    private UsuarioService usuarioService;
 
-    @Autowired
+    //@Autowired
+    private UsuarioService usuarioService;
+/*
+    //@Autowired
     public void setUsuarioService(UsuarioService usuarioService){
         this.usuarioService = usuarioService;
     }
@@ -31,17 +31,23 @@ public class TriviaController {
         return this.usuarioService;
     }
 
+*/
 
-
-    @Autowired
+    //@Autowired
     private JuegoService juegoService;
-
-    @Autowired
+/*
+    //@Autowired
     public void setJuegoService(JuegoService juegoService){
         this.juegoService = juegoService;
     }
     public JuegoService getJuegoService(){
         return this.juegoService;
+    }
+*/
+
+    public TriviaController(UsuarioService usuarioService, JuegoService juegoService) {
+        this.usuarioService = usuarioService;
+        this.juegoService = juegoService;
     }
 
     /**
