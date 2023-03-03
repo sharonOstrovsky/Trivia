@@ -1,11 +1,12 @@
 package com.example.triviadto.entity;
 
 import com.example.triviadto.utility.Categoria;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.*;
 
 
 @Entity

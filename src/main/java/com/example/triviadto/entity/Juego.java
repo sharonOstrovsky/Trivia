@@ -1,10 +1,13 @@
 package com.example.triviadto.entity;
 
-import lombok.Data;
+import lombok.*;
 
 import java.util.ArrayList;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Juego {
 
     private ArrayList<Pregunta> preguntas;
