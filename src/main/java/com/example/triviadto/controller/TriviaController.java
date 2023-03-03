@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/juego")
+@CrossOrigin("*")
 public class TriviaController {
 
     @Autowired
