@@ -90,5 +90,10 @@ public class TriviaController {
     public ArrayList<PreguntaResponseDto> enviarPreguntas(){
         return juegoService.listarPreguntas();
     }
+
+    @GetMapping("/prueba")
+    public String prueba() {
+        return "Hola esto es una prueba";
+    }
 }
 
