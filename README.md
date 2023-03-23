@@ -1,5 +1,6 @@
 # **Trivia** :medal_sports:
 
+<h4>Aplicación desarrollada para EconAr 2023, Feria de Economía del Conocimiento </h4>
 
 ![](src/main/resources/img/logo.png)
 
@@ -24,14 +25,20 @@ conocimiento general, geografía, entretenimiento y matemática.
 * Spring
 * MySQL
 * Postman
-* React
 * Figma
 * Swagger
+* Heroku
 
 ## Figma
 
 ```
 https://www.figma.com/file/N2TUBjsXDa9IlLXYjuu2mu/Untitled?node-id=0%3A1&t=uSVnvvvXe9K1fyAI-1
+```
+
+## Heroku
+
+```
+https://triviatecnologica.herokuapp.com
 ```
 
 ## Instalación
@@ -92,7 +99,5 @@ Importar a Postman el archivo
 * Lautaro Montaño
 * Jasbir Singh
 * Mirna Diaz
-* Dalma 
-* Eliana
 * Hector Sanchez
 
