@@ -28,6 +28,9 @@ conocimiento general, geografía, entretenimiento y matemática.
 * Figma
 * Swagger
 * Heroku
+* Javascript
+* React
+
 
 ## Figma
 
@@ -35,10 +38,16 @@ conocimiento general, geografía, entretenimiento y matemática.
 https://www.figma.com/file/N2TUBjsXDa9IlLXYjuu2mu/Untitled?node-id=0%3A1&t=uSVnvvvXe9K1fyAI-1
 ```
 
-## Heroku
+## Heroku BACK
 
 ```
 https://triviatecnologica.herokuapp.com
+```
+
+## Heroku FRONT
+
+```
+https://trivia-gyl.herokuapp.com
 ```
 
 ## Instalación
@@ -86,6 +95,14 @@ Importar a Postman el archivo
  > TRIVIA.postman_collection.json
 </li>
 </ol>
+
+
+## GitHub FRONT
+
+```
+https://github.com/sharonOstrovsky/TriviaFront.git
+```
+
 
 ## Autores
 
