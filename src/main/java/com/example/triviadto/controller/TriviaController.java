@@ -3,6 +3,7 @@ package com.example.triviadto.controller;
 import com.example.triviadto.dto.requestDto.UsuarioRequestDto;
 import com.example.triviadto.dto.responseDto.PreguntaResponseDto;
 import com.example.triviadto.dto.responseDto.UsuarioResponseDto;
+import com.example.triviadto.entity.Pregunta;
 import com.example.triviadto.entity.Usuario;
 import com.example.triviadto.service.service.JuegoService;
 import com.example.triviadto.service.service.UsuarioService;
@@ -95,6 +96,11 @@ public class TriviaController {
     @GetMapping("/prueba")
     public String prueba() {
         return "Hola esto es una prueba";
+    }
+
+    @GetMapping("/preguntasTotales")
+    public List<Pregunta> obtenerTodasLasPreguntas(){
+        return juegoService.listarTodasLasPreguntas();
     }
 }
 

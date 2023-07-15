@@ -7,6 +7,7 @@ import com.example.triviadto.dto.responseDto.PreguntaResponseDto;
 import com.example.triviadto.entity.Juego;
 import com.example.triviadto.entity.Pregunta;
 import com.example.triviadto.entity.Usuario;
+import com.example.triviadto.repository.PreguntaRepository;
 import com.example.triviadto.service.service.JuegoService;
 import com.example.triviadto.service.service.PreguntaService;
 import com.example.triviadto.service.service.UsuarioService;
@@ -15,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 @Service
@@ -31,11 +33,14 @@ public class JuegoServiceImp implements JuegoService {
 
    // @Autowired
     private ModelMapperInterface modelMapperInterface;
+    private final PreguntaRepository preguntaRepository;
 
-    public JuegoServiceImp(PreguntaService preguntaService, UsuarioService usuarioService,ModelMapperInterface modelMapperInterface) {
+    public JuegoServiceImp(PreguntaService preguntaService, UsuarioService usuarioService,ModelMapperInterface modelMapperInterface,
+                           PreguntaRepository preguntaRepository) {
         this.preguntaService = preguntaService;
         this.usuarioService = usuarioService;
         this.modelMapperInterface = modelMapperInterface;
+        this.preguntaRepository = preguntaRepository;
     }
 
     @Override
@@ -91,6 +96,11 @@ public class JuegoServiceImp implements JuegoService {
         return preguntas;
     }
 
+    @Override
+    public List<Pregunta> listarTodasLasPreguntas() {
+        return preguntaRepository.findAll();
+    }
+
 
 
     @Override
@@ -102,6 +112,8 @@ public class JuegoServiceImp implements JuegoService {
 
         juego.setPreguntas(preguntas);
     }
+
+
 
     @Override
     public void settearPreguntas() {
@@ -122,6 +134,8 @@ public class JuegoServiceImp implements JuegoService {
         juego.setUsuario(usuario);
         return usuario;
     }
+
+
 
 
 }

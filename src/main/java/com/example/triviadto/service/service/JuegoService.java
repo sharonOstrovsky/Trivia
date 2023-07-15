@@ -8,6 +8,7 @@ import com.example.triviadto.utility.Categoria;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface JuegoService {
 
@@ -22,4 +23,8 @@ public interface JuegoService {
     void settearPreguntas();
 
     void eliminarPregunta(Pregunta pregunta);
+
+    List<Pregunta> listarTodasLasPreguntas();
+
+
 }
