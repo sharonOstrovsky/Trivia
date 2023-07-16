@@ -11,7 +11,6 @@ public interface PreguntaService {
     ArrayList<Pregunta> settearPreguntasParaUsuario(int nivel );
 
     ArrayList<Pregunta> settearPreguntasParaUsuarioNivelNulo();
-    ArrayList<Pregunta> obtenerPreguntasPorCategoria(ArrayList<Pregunta> preguntasUsuario, Categoria categoria);
 
 
 }

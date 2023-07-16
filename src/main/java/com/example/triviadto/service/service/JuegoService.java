@@ -12,18 +12,9 @@ import java.util.List;
 
 public interface JuegoService {
 
-    Categoria obtenerCategoriaAzar();
-    Pregunta obtenerPreguntaAzar();
-
     Usuario guardarUsuarioJuego(UsuarioRequestDto usuarioRequestDto);
-
-
-
     ArrayList<PreguntaResponseDto> listarPreguntas();
     void settearPreguntas();
-
-    void eliminarPregunta(Pregunta pregunta);
-
     List<Pregunta> listarTodasLasPreguntas();
 
 

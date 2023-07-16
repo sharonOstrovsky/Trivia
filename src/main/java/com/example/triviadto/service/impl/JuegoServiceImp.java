@@ -24,10 +24,7 @@ public class JuegoServiceImp implements JuegoService {
 
     Juego juego = new Juego();
 
-
-
     PreguntaService preguntaService;
-
 
     UsuarioService usuarioService;
 
@@ -43,76 +40,25 @@ public class JuegoServiceImp implements JuegoService {
         this.preguntaRepository = preguntaRepository;
     }
 
-    @Override
-    public Categoria obtenerCategoriaAzar() {
-        int numAleatorio = (int)(Math.random() * ((4 - 0) + 1)) + 0;
-
-        switch (numAleatorio){
-            case 0:
-                return Categoria.geografia;
-            case 1:
-                return Categoria.matematica;
-            case 2:
-                return Categoria.tecnologia;
-            case 3:
-                return Categoria.conocimientoGeneral;
-            case 4:
-                return Categoria.entretenimiento;
-        }
-        return null;
-    }
-
-    @Override
-    public Pregunta obtenerPreguntaAzar() {
-
-        ArrayList<Pregunta> preguntas = preguntaService.obtenerPreguntasPorCategoria(juego.getPreguntas(), obtenerCategoriaAzar());
-
-        int cantPreguntas = preguntas.size();
-
-        int numAleatorio = (int)(Math.random() * ((cantPreguntas-1 - 0) + 1)) + 0;
-
-
-        return preguntas.get(numAleatorio);
-    }
-
-
 
     public ArrayList<PreguntaResponseDto> listarPreguntas(){
-
-
         settearPreguntas();
 
-        ArrayList<PreguntaResponseDto> preguntas = new ArrayList<>();
+        ArrayList<PreguntaResponseDto> preguntasDTO = new ArrayList<>();
+        ArrayList<Pregunta> preguntas = preguntaRepository.obtenerPreguntas();
 
-        for(int i = 0; i < 5; i++){
-            Pregunta pregunta = obtenerPreguntaAzar();
 
-            preguntas.add(modelMapperInterface.preguntaAPreguntaResDto(pregunta));
-
-            eliminarPregunta(pregunta);
-
+        for (Pregunta pregunta : preguntas) {
+            preguntasDTO.add(modelMapperInterface.preguntaAPreguntaResDto(pregunta));
         }
 
-        return preguntas;
+        return preguntasDTO;
     }
 
     @Override
     public List<Pregunta> listarTodasLasPreguntas() {
         return preguntaRepository.findAll();
     }
-
-
-
-    @Override
-    public void eliminarPregunta(Pregunta pregunta){
-
-        ArrayList<Pregunta> preguntas = juego.getPreguntas();
-
-        preguntas.remove(pregunta);
-
-        juego.setPreguntas(preguntas);
-    }
-
 
 
     @Override

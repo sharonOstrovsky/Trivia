@@ -23,17 +23,9 @@ public class PreguntaServiceImp implements PreguntaService {
 
     @Override
     public ArrayList<Pregunta> settearPreguntasParaUsuario(int nivel) {
-        List<Pregunta> preguntas = preguntaRepository.findAll();
+        System.out.println("nivel: "+ nivel);
+        return preguntaRepository.obtenerPreguntasPorNivel(nivel);
 
-        ArrayList<Pregunta> preguntasUsuario = new ArrayList<>();
-
-        for (Pregunta pregunta: preguntas) {
-            if(pregunta.getNivel() == nivel){
-                preguntasUsuario.add(pregunta);
-            }
-        }
-
-        return preguntasUsuario;
     }
 
     @Override
@@ -43,17 +35,5 @@ public class PreguntaServiceImp implements PreguntaService {
 
     }
 
-    public ArrayList<Pregunta> obtenerPreguntasPorCategoria(ArrayList<Pregunta> preguntasUsuario, Categoria categoria){
-        ArrayList<Pregunta> preguntasCategoria = new ArrayList<>();
-       // System.out.println("Categoria: "+categoria);
-        for (Pregunta pregunta: preguntasUsuario) {
-            if(pregunta.getCategoria().equals(categoria)){
-                preguntasCategoria.add(pregunta);
-
-            }
-        }
-
-        return preguntasCategoria;
-    }
 
 }
