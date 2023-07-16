@@ -11,13 +11,6 @@ import java.util.ArrayList;
 @Repository
 public interface PreguntaRepository extends JpaRepository<Pregunta, Long> {
 
-    /*
-    @Query(value = "SELECT * FROM pregunta ORDER BY RAND() LIMIT 20", nativeQuery = true)
-    ArrayList<Question> getQuestionsTwoPlayers();
-
-    @Query("SELECT p FROM Person p WHERE p.name = :name AND p.lastName = :lastName AND p.active=true")
-    Person findByNameAndLastName(@Param("name") String name, @Param("lastName") String lastName);
-     */
 
     @Query(value = "SELECT p FROM Pregunta p WHERE p.nivel = :nivel")
     ArrayList<Pregunta> obtenerPreguntasPorNivel(@Param("nivel") int nivel);
